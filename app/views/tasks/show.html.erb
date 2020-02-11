@@ -1,14 +1,14 @@
 <h1><%= @task.title %></h1>
 <button type="button" class="btn btn-light"><%= link_to "Edit this task", edit_task_path %></button>
 <p> <%= @task.details %></p>
-<input type="checkbox" name="complete-status" value="task" disabled>
-<label for="complete-status">
-  <% if @task.completed == true  %>
-    <%= "This task has been completed" %>
-  <% else %>
-    <%= "This task is incomplete." %>
-  <% end %>
-</label>
+<% if @task.completed %>
+  <input type="checkbox" name="complete-status" value="task" checked>
+  <label for="complete-status"><%= "This task has been completed" %></label>
+<% else %>
+  <input type="checkbox" name="complete-status" value="task">
+  <label for="complete-status"><%= "This task is incomplete." %></label>
+<% end %>
+
 <br>
 <br>
 <%= link_to "Back", tasks_path %>

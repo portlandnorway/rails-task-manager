@@ -9,5 +9,10 @@
     <%= f.text_field :details, class: 'form-control' %>
   </div>
 
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="task[completed]" id="completed">
+    <%= f.label 'Mark as completed?' %>
+  </div>
+
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
